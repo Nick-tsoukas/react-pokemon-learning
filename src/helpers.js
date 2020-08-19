@@ -1,3 +1,11 @@
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+};
+
 const pokemons = [
     {id: 4, name: 'Charmander', type: 'fire', base_experience: 62},
     {id: 7, name: 'Squirtle', type: 'water', base_experience: 63},
@@ -7,6 +15,7 @@ const pokemons = [
     {id: 39, name: 'Jigglypuff', type: 'normal', base_experience: 95},
     {id: 94, name: 'Gengar', type: 'poison', base_experience: 225},
     {id: 133, name: 'Eevee', type: 'normal', base_experience: 65},
-];
+]
 
-export default pokemons;
+
+export {shuffle, pokemons};
